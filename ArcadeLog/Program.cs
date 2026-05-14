@@ -27,19 +27,24 @@ namespace ArcadeLog
 
             // Agrupa por Medalha e Imprime (Gold → Silver → Bronze)
             // Escreve a lista no ficheiro ranking.txt
-            using StreamWriter sw = new StreamWriter("ranking.txt");
+            using StreamWriter swRanking = new StreamWriter("ranking.txt");
 
             
             
             foreach(Score element in scores)
             {
-                sw.WriteLine(element);
+                swRanking.WriteLine(element);
             }
 
             Console.WriteLine("Ranking guardado em 'ranking.txt'.");
 
             // Ordena por Nome e Escreve em alpha.txt
-            // CÓDIGO AQUI
+            using StreamWriter swAlpha = new StreamWriter("alpha.txt");
+
+            foreach(Score element in scores)
+            {
+                swAlpha.WriteLine(element);
+            }
 
             // Este programa mostra o seguinte no ecrã (exemplo: scores.txt com "Kronos 7400", "Luna 3800", "Rex 520", "Phantom 6100"):
             //
