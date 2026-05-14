@@ -7,6 +7,6 @@ namespace ArcadeLog
 {
     public interface IComparable
     {
-        
+        public Score Points {get;}
     }
 }
