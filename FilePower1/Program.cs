@@ -9,8 +9,8 @@ namespace FilePower1
         private static void Main(string[] args)
         {
             string nomeFicheiro = args[0];
-            StreamWriter sw = new StreamWriter(nomeFicheiro);
-            Queue<string> palavras = new Queue<string>();
+            using StreamWriter sw = new StreamWriter(nomeFicheiro);
+            //Queue<string> palavras = new Queue<string>();
 
             bool loop = true;
 
@@ -24,16 +24,18 @@ namespace FilePower1
                 {
                     loop = false;
                 }
+
+                sw.WriteLine(palavra);
                 
-                palavras.Enqueue(palavra);
+                //palavras.Enqueue(palavra);
             }
 
-            foreach(string elemento in palavras)
-            {
-                sw.WriteLine(elemento);
-            }
+            // foreach(string elemento in palavras)
+            // {
+            //     sw.WriteLine(elemento);
+            // }
 
-            sw.Close();
+            //sw.Close();
         }
     }
 }
