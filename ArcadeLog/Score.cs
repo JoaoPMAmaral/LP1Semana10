@@ -3,19 +3,53 @@ namespace ArcadeLog
     public class Score : IComparable<Score>
     {
         // Variável de Instância Privada: points (int)
-        // CÓDIGO AQUI
+        private int points;
 
         // Propriedade Auto-Implementada Só de Leitura: Name (string)
-        // CÓDIGO AQUI
+        public string name {get;}
 
         // Propriedade: Points (int), sempre entre 0 e 9999
-        // CÓDIGO AQUI
+        public float Points
+        {
+            get
+            {
+                if(points >= 9999)
+                {
+                    return 9999;
+                }else if(points <= 0)
+                {
+                    return 0;
+                }else
+                {
+                    return points;
+                }
+            }
+        }
 
         // Propriedade Só de Leitura: Medal (string)
-        // CÓDIGO AQUI
+        public string Medal
+        {
+            get
+            {
+                if(points >= 7000)
+                {
+                    return "Gold";
+                } else if(points >= 4000)
+                {
+                    return "Silver";
+                } else
+                {
+                    return "Bronze";
+                }
+            }
+        }
 
         // Construtor: aceita nome e pontuação
-        // CÓDIGO AQUI
+        public Score(string nome, int pontuacao)
+        {
+            nome = name;
+            pontuacao = points;
+        }
 
         public int CompareTo(Score other)
         {
@@ -25,8 +59,7 @@ namespace ArcadeLog
 
         public override string ToString()
         {
-            // CÓDIGO AQUI
-            return ""; // substitua o return
+            return $"{name} [{Medal}]: {points}";
         }
     }
 }
